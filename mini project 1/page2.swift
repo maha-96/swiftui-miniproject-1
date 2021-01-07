@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct page2: View {
-    let bic: String
-    let price: Int
+    let renting : Renting
     @State var name = ""
     @State var phonenum = ""
     @State var houre = 0
@@ -21,7 +20,7 @@ struct page2: View {
         
         VStack() {
             
-            Image(bic)
+            Image(renting.bic)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 350, height: 300)
@@ -38,7 +37,7 @@ struct page2: View {
             Stepper("عدد الدراجات :\(q)", value:$q , in:0...7)
             Spacer()
             
-            let total = String( houre * q * price )
+            let total = String( houre * q * renting.price )
             
             Text("المبلغ الكلي")
             Text(total)
@@ -79,7 +78,7 @@ struct page2: View {
 
 struct page2_Previews: PreviewProvider {
     static var previews: some View {
-        page2(bic: "bic1", price: 0)
+        page2(renting: Renting( price: 0, bic: "bic1"))
     }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct page3: View {
+    
     var name : String
      var houre : Int
      var phonenum : String
